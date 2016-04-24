@@ -38,7 +38,7 @@ class ForecastContainer extends Component {
       <Forecast
         city={this.props.routeParams.city}
         isLoading={this.state.isLoading}
-        handleClick={this.handleClick}
+        handleClick={(weather) => this.handleClick(weather)}
         forecastData={this.state.forecastData} />
     )
   }
