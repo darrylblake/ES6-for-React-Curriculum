@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react'
 var utils = require('../helpers/utils');
 var DayItem = require('./DayItem');
 var convertTemp = utils.convertTemp;
@@ -28,4 +28,4 @@ function Detail (props) {
   )
 }
 
-module.exports = Detail;
+export default Detail
