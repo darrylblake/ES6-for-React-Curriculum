@@ -1,7 +1,5 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-var utils = require('../helpers/utils');
-var getDate = utils.getDate;
+import React, { PropTypes } from 'react'
+import { getDate } from '../helpers/utils'
 import DayItem from './DayItem'
 
 var styles = {
@@ -65,4 +63,4 @@ Forecast.propTypes = {
   isLoading: PropTypes.bool.isRequired
 }
 
-module.exports = Forecast;
+export default Forecast;

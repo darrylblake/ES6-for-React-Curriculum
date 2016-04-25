@@ -1,7 +1,6 @@
 import React from 'react'
-var utils = require('../helpers/utils');
+import { convertTemp } from '../helpers/utils'
 import DayItem from './DayItem'
-var convertTemp = utils.convertTemp;
 
 var styles = {
   descriptionContainer: {
