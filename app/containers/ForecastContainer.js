@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Forecast from '../components/Forecast'
-var getForcast = require('../helpers/api').getForcast;
+import { getForecast } from '../helpers/api'
 
 class ForecastContainer extends Component {
   constructor() {
@@ -16,14 +16,12 @@ class ForecastContainer extends Component {
   componentWillReceiveProps (nextProps) {
     this.makeRequest(nextProps.routeParams.city)
   }
-  makeRequest (city) {
-    getForcast(city)
-      .then(function (forecastData) {
-        this.setState({
-          isLoading: false,
-          forecastData: forecastData
-        });
-      }.bind(this));
+  async makeRequest (city) {
+    let forecastData = await getForecast(city)
+    this.setState({
+      isLoading: false,
+      forecastData
+    })
   }
   handleClick (weather) {
     this.context.router.push({
@@ -48,4 +46,4 @@ ForecastContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
 }
 
-module.exports = ForecastContainer;
+export default ForecastContainer;
