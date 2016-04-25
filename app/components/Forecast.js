@@ -41,7 +41,7 @@ function ForecastUI (props) {
   )
 }
 
-function Forecast ({ isLoading, forecastData, handleClick }) {
+function Forecast ({ isLoading, forecastData, city, handleClick }) {
   return (
     <div>
       {
