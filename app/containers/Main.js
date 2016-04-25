@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react'
 import GetCityContainer from './GetCityContainer'
 
 var styles = {
@@ -16,18 +16,16 @@ var styles = {
   }
 }
 
-var Main = React.createClass({
-  render: function () {
-    return (
-      <div style={styles.container}>
-        <div style={styles.header}>
-          <h2 style={{margin: 0}}>Clever Title</h2>
-          <GetCityContainer direction='row' />
-        </div>
-        {this.props.children}
+function Main(props) {
+  return (
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <h2 style={{margin: 0}}>Clever Title</h2>
+        <GetCityContainer direction='row' />
       </div>
-    )
-  }
-})
+      {props.children}
+    </div>
+  )
+}
 
-module.exports = Main;
+export default Main;
